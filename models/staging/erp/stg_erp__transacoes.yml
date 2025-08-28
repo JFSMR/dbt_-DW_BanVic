@@ -1,0 +1,12 @@
+version: 2
+
+
+models: 
+  - name: stg_erp__transacoes
+    description: "Modelo de staging para transacoes, com dados limpos e Ids únicos "
+    columns: 
+     - name: id_transacao
+       description: A chave primária única para cada transacoes.
+       tests:
+        - unique
+        - not_null

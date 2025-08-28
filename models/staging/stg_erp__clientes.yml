@@ -1,0 +1,14 @@
+version: 2
+
+
+models: 
+  - name: stg_erp__clientes
+    description: "Modelo de staging para clientes, com dados limpos e Ids únicos "
+    columns: 
+     - name: id_cliente
+       description: A chave primária única para cada cliente.
+       tests:
+        - unique
+        - not_null
+        
+     

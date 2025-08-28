@@ -1,0 +1,17 @@
+version: 2
+
+
+sources:
+  - name: erp 
+    database: bancovicdb
+    schema: caseindicium
+    tables:
+      - name: agencias
+      - name: clientes
+      - name: colaborador_agencia
+      - name: colaboradores
+      - name: contas
+      - name: propostas_credito
+      - name: transacoes
+        
+             

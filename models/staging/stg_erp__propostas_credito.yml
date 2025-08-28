@@ -1,0 +1,12 @@
+version: 2
+
+
+models: 
+  - name: stg_erp__propostas_credito
+    description: "Modelo de staging para propostas credito, com dados limpos e Ids únicos "
+    columns: 
+     - name: id_proposta
+       description: A chave primária única para cada propostas credito.
+       tests:
+        - unique
+        - not_null
