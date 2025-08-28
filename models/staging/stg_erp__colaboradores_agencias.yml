@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_erp__colaborador_agencias
+    description: "Modelo de staging para o relacionamento entre colaboradores e agências "
+    columns:
+      - name: id_colaborador
+        description: "A chave do colaborador"
+      - name: id_agencia
+        description: "A chave do agência"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+           - id_colaborador
+           - id_agencia
+
+

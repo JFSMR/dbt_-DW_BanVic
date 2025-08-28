@@ -1,0 +1,13 @@
+version: 2
+   
+
+   
+models: 
+  - name: stg_erp__colaboradores
+    description: "Modelo de staging para colaboradores com dados limpos e Ids únicos "
+    columns: 
+     - name: id_colaborador
+       description: A chave primária única para cada colaboradores.
+       tests:
+        - unique
+        - not_null
