@@ -1,0 +1,76 @@
+version: 2
+
+moldes:
+  - name:  int_propostacredito__enriched
+    columns:
+      - name: sk_proposta_credito
+        tests:
+          - unique          
+           - not_null
+          
+
+      - name: id_proposta
+        tests:
+          - unique          
+           - not_null
+
+      - name: data_entrada_proposta
+
+      - name: status_proposta
+
+      - name: tipo_cliente
+
+      - name: nome_agencia
+
+      - name: tipo_agencia
+
+      - name: nome_colaboradores
+
+      - name: valor_proposta
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:         
+              expression: "valor_proposta >= 0"
+
+      - name: valor_financiamento
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:         
+              expression: "valor_proposta >= 0"
+
+      - name: valor_entrada
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "valor_entrada >= 0"
+              
+      - name: valor_prestacao
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "valor_prestacao >= 0"
+
+      - name: quantidade_parcelas
+
+      - name: taxa_juros_mensal
+        tests:
+           - not_null
+
+      - name: carencia 
+
+      - name: aprovada
+        tests:
+         - accepted_values:
+            values: [1, 0]
+      - name: analise
+        tests:
+         - accepted_values:
+            values: [1, 0]
+      - name: enviado
+        tests:
+         - accepted_values:
+            values: [1, 0]
+      - name: val_documento
+        tests:
+         - accepted_values:
+            values: [1, 0]

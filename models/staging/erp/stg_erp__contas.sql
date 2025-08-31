@@ -12,12 +12,12 @@ renamed as (
         cast(num_conta as string)                                       as  id_num_conta
         , cast(cod_cliente as string)                                   as  id_cliente      
         , cast(cod_agencia as string)                                   as  id_agencia
-        , cast(cod_colaborador as string)                               as  colaborador 
+        , cast(cod_colaborador as string)                               as  id_colaborador 
         , cast(tipo_conta as string)                                    as  tipo_conta
-        , format_date('%d/%m/%Y' , data_abertura)                       as  data_abertura
-        , cast(saldo_total as 	bignumeric )                            as  saldo_total
-        , cast(saldo_disponivel as 	bignumeric )                        as  saldo_disponivel
-        , format_date('%d/%m/%Y' ,data_ultimo_lancamento)               as  data_ultimo_lancamento
+        ,cast(data_abertura as date)                                    as  data_abertura
+        , cast(saldo_total as 	numeric )                            as  saldo_total
+        , cast(saldo_disponivel as 	numeric )                        as  saldo_disponivel
+        , cast(data_ultimo_lancamento  as date)                         as  data_ultimo_lancamento
         ,row_number() over( partition by num_conta order by num_conta)  as  row_number        
     from source
       where num_conta is not null
@@ -28,7 +28,7 @@ select
  id_num_conta
  ,id_cliente      
  ,id_agencia
- ,colaborador
+ ,id_colaborador
  ,tipo_conta
  ,data_abertura
  ,saldo_total
