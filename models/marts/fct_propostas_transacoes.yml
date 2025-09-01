@@ -1,0 +1,46 @@
+version: 2
+
+
+models: 
+  - name: fct_propostas_transacoes
+    description: >
+      Fato de transações vinculadas a proposta de crédito.
+      Esse modelo consolida métricas de receitas e despesas financeiras, contribuindo com  análises  de performance comercial e comportamento financeiro.     
+      
+    columns:
+      - name: id_surrogate 
+        description:  " Chave única gerada a partir da combinação  entre transação e proposta"
+        tests:
+         - unique
+         - not_null
+
+      - name: id_transacao
+        description: "Id da transação realizada "
+        tests:
+          - not_null
+
+      - name: id_proposta
+        description: "Identificador da proposta de crédito associada."
+        tests:
+          - not_null
+
+      - name: valor_receita_transacao
+        description: "Valor positivo da transação representando a entrada de receita(R$)" 
+
+      - name: valor_despesa_transacao
+        description:  "Valor negativo de transação representando saída de dinheiro"
+
+      - name: valor_financiamento
+        description: "Valor fianciamento na proposta aprovada "
+
+      - name: valor_prestacao
+        description: "Valor de prestações mensais  "
+
+      - name: quantidade_parcelas
+        description: "Quantidade de parcelas previstas para pagar"
+
+      - name: taxa_juros_mensal 
+        description: "Taxa de juros de financiamento aplicado mensal"
+
+      - name: status_proposta 
+        description: "Status de proposta (aprovado, recusada,em análise)."

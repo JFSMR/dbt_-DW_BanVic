@@ -1,0 +1,12 @@
+version: 2
+
+
+models: 
+  - name: dim_contas
+    description: "Modelo de staging para contas, com dados limpos e Ids únicos "
+    columns: 
+     - name: id_num_conta
+       description: A chave primária única para cada contas.
+       tests:
+        - unique
+        - not_null

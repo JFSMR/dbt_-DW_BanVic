@@ -3,7 +3,7 @@ version: 2
 
    
 models: 
-  - name: int_dim_colaboradores
+  - name: dim_colaboradores
     description: "Modelo de staging para colaboradores com dados limpos e Ids únicos "
     columns: 
      - name: id_colaborador
