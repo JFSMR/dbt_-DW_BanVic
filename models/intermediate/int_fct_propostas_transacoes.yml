@@ -1,0 +1,94 @@
+version: 2
+
+models: 
+  - name: int_fct_propostas_transacoes
+    description: >
+     Modelo intermediário que cruza transações financeiras com dados de contas é proposta de crédito.
+     Server como base para análises de comportamento financeiro e performance comercila 
+      
+
+    columns:
+      - name: id_surrogate
+        description: "Chave  técnica gerada via MD5 entre id_transacao e id_proposta "
+        tests:
+          - unique
+          - not_null
+
+      - name: id_transacao
+        description: "Identificador único  da transação realizada"
+        tests:
+          - not_null
+
+      - name: id_proposta
+        description: "Identificador de proposta de crédito vinculada à transação."
+        tests:
+          - not_null
+
+      - name: id_num_conta
+        description: "Número de conta bancária associada à transação."
+
+      - name: data_transacao
+        description: "Registro da data em que a transação foi regitrada."
+
+      - name: nome_transacao
+        description: "Descrição da transação."
+
+      - name: valor_transacao
+        description: "Valor bruto movimento na transação."
+
+      - name: Valor_receita_transacao 
+        description: "Valor positivo da transação, representada receita."
+
+      - name: valor_despesa_transacao
+        description: "Valor negativo da transação, representando despesa."
+
+      - name: id_cliente 
+        description: "Identificador do cliente dono da conta."
+
+      - name: id_agencia
+        description: "Código da agência bancária da conta."
+
+      - name: id_colaborador
+        description: "Colaborador responsável pela conta e proposta."
+
+      - name: tipo_conta
+        description: "Tipo da conta (PF)."
+
+      - name: data_abertura
+        description: "Data de abertura da conta bancária."
+
+      - name: ssaldo_total
+        description: "Saldo total da conta no momento da transação."
+
+      - name: saldo__disponivel
+        description: "Saldo disponível para movimentação."
+
+      - name: data_ultimo_lancamento
+        description: "Data do último lançamento registrado na conta."
+
+      - name: status_proposta 
+        description: "Status atual da proposta."
+
+      - name: data_entrada_proposta
+        description: "Registro da data em que a proposta foi registrada no sitema."
+
+      - name: taxa_juros_mensal
+        description: "Taxa de juros mensal aplicada à proposta."
+
+      - name: valor_proposta
+        description: "Valor total solicitado na proposta de crédito."
+
+      - name: valor_financiamento
+        description: "Valor efetivamente financiado ao cliente." 
+
+      - name: valor_entrada
+        description: "Valor pago como entrada na proposta."
+
+      - name: valor_prestacao
+        description: "Valor da prestação mensal acordada."
+
+      - name: quantidade_parcelas
+        description: "Quantidade total de parcelas previstas na proposta."
+
+      - name: carencia 
+        description: "Período de carência antes do início dos pagamentos."

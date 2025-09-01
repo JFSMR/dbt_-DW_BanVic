@@ -24,10 +24,10 @@ renamed as (
 select 
  id_colaborador
  , nome_completo
- , email
- , cpf
- , data_nascimento
- , endereco
- , cep
+ --, email
+ --, cpf
+ --, data_nascimento
+ --, endereco
+ --, cep
 from renamed
 where row_number = 1
