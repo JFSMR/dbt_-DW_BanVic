@@ -84,7 +84,7 @@ transacoes_enriched as (
              order by p.data_entrada_proposta desc
         )  as  rn_proposta
     from transacoes as t
-    inner      join contas as c
+    left     join contas as c
      on  t.id_num_conta = c.id_num_conta
     inner   join propostas as p
          on c.id_cliente = p.id_cliente
